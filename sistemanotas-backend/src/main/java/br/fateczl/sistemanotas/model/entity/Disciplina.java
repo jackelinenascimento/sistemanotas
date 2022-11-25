@@ -1,10 +1,6 @@
 package br.fateczl.sistemanotas.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-<<<<<<< HEAD
-=======
-import com.fasterxml.jackson.annotation.JsonProperty;
->>>>>>> 55558b360cafdd4b9f2c420f824f2cea74730999
 import lombok.*;
 
 import javax.persistence.*;

@@ -36,11 +36,6 @@ public class FaltasService {
         
         Optional<Disciplina> disciplina = disciplinaRepository.findById(faltasDto.getDisciplina());
 
-<<<<<<< HEAD
         faltasRepository.save(new Faltas(aluno.get(), disciplina.get(), faltasDto.getPresenca()));
-=======
-        faltasRepository.save(new Faltas(aluno.get(), Collections.singletonList(disciplina.get()), faltasDto.getPresenca()));
->>>>>>> 55558b360cafdd4b9f2c420f824f2cea74730999
-
     }
 }

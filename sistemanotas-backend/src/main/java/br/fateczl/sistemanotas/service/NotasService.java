@@ -12,7 +12,6 @@ import br.fateczl.sistemanotas.repository.NotasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,13 +44,8 @@ public class NotasService {
 
         notasRepository.save(new Notas(
                 aluno.get(),
-<<<<<<< HEAD
                 disciplina.get(),
                 avaliacao.get(),
-=======
-                Collections.singletonList(disciplina.get()),
-                Collections.singletonList(avaliacao.get()),
->>>>>>> 55558b360cafdd4b9f2c420f824f2cea74730999
                 notasDto.getNota()
         ));
     }

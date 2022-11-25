@@ -8,8 +8,7 @@ INSERT INTO Aluno VALUES
 ('Theo'),
 ('Livia')
 
-select * from Disciplina
-INSERT INTO Disciplina VALUES
+INSERT INTO Disciplina(codigo, nome, sigla, turno, num_aulas) VALUES
 ('4203-010', 'Arquitetura e Organização de Computadores', 'AOC', 'T', 80),
 ('4203-020', 'Arquitetura e Organização de Computadores', 'AOC', 'N', 80),
 ('4208-010', 'Laboratório de Hardware', 'LHW', 'T', 40),

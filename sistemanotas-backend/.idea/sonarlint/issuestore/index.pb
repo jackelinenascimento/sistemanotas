@@ -1,6 +1,4 @@
 
-u
-Esrc/main/java/br/fateczl/sistemanotas/controller/NotasController.java,6\d\6d2c15b99c74a0743c239b3a420c310e3cc038e7
 t
 Dsrc/main/java/br/fateczl/sistemanotas/service/DisciplinaService.java,6\b\6b632f8a5781ef1aa250a4cea9c8499181332379
 m
@@ -27,8 +25,6 @@ U
 %.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
 u
 Esrc/main/java/br/fateczl/sistemanotas/controller/AlunoController.java,f\6\f63bac752bb2f3ab2cabbea9c5eeb41965c95bbb
-R
-"src/main/resources/SQL/INSERTS.sql,9\f\9fc357f3af1845f6bec5e0e0234b7e179cb8c740
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 r
@@ -37,29 +33,11 @@ s
 Csrc/main/java/br/fateczl/sistemanotas/service/AvaliacaoService.java,8\9\89c16ffbc217b7802e9e945003a103985377411e
 y
 Isrc/main/java/br/fateczl/sistemanotas/controller/AvaliacaoController.java,2\2\22738225032d26c7e3c178f29b13872ca085ba09
-S
-#src/main/resources/SQL/TRIGGERS.sql,c\f\cf4c5ba560cb61097d011aa192c60f721b8e8fe0
-^
-.src/main/resources/SQL/PROCEDURES AND UDFs.sql,e\3\e3bff14103b3d98e8935dea7c154a0b78958240e
 q
 Asrc/main/java/br/fateczl/sistemanotas/model/entity/Avaliacao.java,f\9\f93d74b28b1a75ff1af68a4b4e91f61fe5c97936
-n
->src/main/java/br/fateczl/sistemanotas/model/entity/Faltas.java,4\a\4af6c3adcedd142231386c6d69a4689966cc34ac
-n
->src/main/java/br/fateczl/sistemanotas/model/dto/FaltasDto.java,e\2\e24aa0e7e724d98edbd4892ec687e4bd02b9a6b2
+m
+=src/main/java/br/fateczl/sistemanotas/model/dto/NotasDto.java,3\d\3d1b945a3c29a57330608c927967e4d496f1e6b7
 u
 Esrc/main/java/br/fateczl/sistemanotas/repository/NotasRepository.java,6\a\6a3ad533a6c667f6f6692ff2fc296c0ce89f0ab9
 v
 Fsrc/main/java/br/fateczl/sistemanotas/repository/FaltasRepository.java,3\0\30d4545259b78caa7af3cc7b530a3542433540c2
-m
-=src/main/java/br/fateczl/sistemanotas/model/dto/NotasDto.java,3\d\3d1b945a3c29a57330608c927967e4d496f1e6b7
-m
-=src/main/java/br/fateczl/sistemanotas/model/entity/Notas.java,2\0\207c8a46622ecaf065df5812403b077d71caeb9a
-o
-?src/main/java/br/fateczl/sistemanotas/service/NotasService.java,7\e\7ef7cf0bceabb0d8d24b54524816909145238901
-r
-Bsrc/main/java/br/fateczl/sistemanotas/model/entity/Disciplina.java,2\6\26f81539e6bd5bcfaebfdc4696e1efd720fd0f4e
-v
-Fsrc/main/java/br/fateczl/sistemanotas/controller/FaltasController.java,a\c\ac114a75f684f4ac880dc51eddb2d6728b7e535a
-p
-@src/main/java/br/fateczl/sistemanotas/service/FaltasService.java,d\0\d009b34a2619e7883db9ac1cd2f010b0c5d63e49
