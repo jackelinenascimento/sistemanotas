@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface NotasRepository extends JpaRepository<Notas, Long> {
 
-//    @Query(nativeQuery = true, value = "SELECT DBO.fn_MASK_CARD(:text)")
-//    String callMaskCard(@Param("text") String text);
+    @Query(nativeQuery = true, value = "SELECT DBO.fn_selectNotas(:disciplina_id)")
+    String selectNotas(@Param("disciplina_id") Long disciplina_id);
 }

@@ -9,8 +9,55 @@ BEGIN
 
 	SET @ra_aluno = (SELECT aluno_ra FROM inserted)
 	SET @id_disciplina = (SELECT disciplina_id FROM inserted)
-	SET @codigo_disciplina = (SELECT codigo FROM Disciplina WHERE id = @id_disciplina)
 	SET @codigo_avaliacao = (SELECT avaliacao_codigo FROM inserted)
+
+    IF(@id_disciplina = 1)
+        BEGIN
+            SET @cod_disciplina = '4203-010'
+        END
+    END
+
+     IF(@id_disciplina = 2)
+        BEGIN
+            SET @cod_disciplina = '4203-020'
+        END
+    END
+
+     IF(@id_disciplina = 3)
+        BEGIN
+            SET @cod_disciplina = '4208-010'
+        END
+    END
+
+    IF(@id_disciplina = 4)
+        BEGIN
+            SET @cod_disciplina = '4226-004'
+        END
+    END
+
+     IF(@id_disciplina = 5)
+        BEGIN
+            SET @cod_disciplina = '4213-003'
+        END
+    END
+
+    IF(@id_disciplina = 6)
+        BEGIN
+            SET @cod_disciplina = '4213-013'
+        END
+    END
+
+    IF(@id_disciplina = 7)
+        BEGIN
+            SET @cod_disciplina = '4233-005'
+        END
+    END
+
+     IF(@id_disciplina = 8)
+        BEGIN
+            SET @cod_disciplina = '5005-220'
+        END
+    END
 
 	-- AOC, LHW, BDD
 	IF(@codigo_disciplina = '4203-010' OR @codigo_disciplina = '4203-020'
