@@ -60,59 +60,59 @@ public class NotasService {
         String disciplinaCodigo = disciplina.get().getCodigo();
         String avaliacaoTipo = avaliacao.get().getTipo();
 
-        if(disciplinaCodigo == "4203-010" || disciplinaCodigo == "4203-020" || disciplinaCodigo == "4208-010" || disciplinaCodigo == "4226-004"){
-            if(avaliacaoTipo == "P1"){
+        if(disciplinaCodigo.contains("4203-010") || disciplinaCodigo.contains("4203-020") || disciplinaCodigo.contains("4208-010") || disciplinaCodigo.contains("4226-004")){
+            if(avaliacaoTipo.contains("P1")){
                 peso = 0.3;
             }
-            if(avaliacaoTipo == "P2"){
+            if(avaliacaoTipo.contains("P2")){
                 peso = 0.5;
             }
-            if(avaliacaoTipo == "T"){
+            if(avaliacaoTipo.contains("T")){
                 peso = 0.2;
             }
-            if(avaliacaoTipo == "P3"){
+            if(avaliacaoTipo.contains("P3")){
                 peso = 0.5;
             }
         }
 
-        if(disciplinaCodigo == "4213-003" || disciplinaCodigo == "4213-013"){
-            if(avaliacaoTipo == "P1"){
+        if(disciplinaCodigo.contains("4213-003") || disciplinaCodigo.contains("4213-013")){
+            if(avaliacaoTipo.contains("P1")){
                 peso = 0.35;
             }
-            if(avaliacaoTipo == "P2"){
+            if(avaliacaoTipo.contains("P2")){
                 peso = 0.35;
             }
-            if(avaliacaoTipo == "P3"){
+            if(avaliacaoTipo.contains("P3")){
                 peso = 0.3;
             }
-            if(avaliacaoTipo == "P4"){
+            if(avaliacaoTipo.contains("P4")){
                 peso = 0.5;
             }
         }
 
-        if(disciplinaCodigo == "4233-005"){
-            if(avaliacaoTipo == "P1"){
+        if(disciplinaCodigo.contains("4233-005")){
+            if(avaliacaoTipo.contains("P1")){
                 peso = 0.333;
             }
-            if(avaliacaoTipo == "P2"){
+            if(avaliacaoTipo.contains("P2")){
                 peso = 0.333;
             }
-            if(avaliacaoTipo == "P3"){
+            if(avaliacaoTipo.contains("P3")){
                 peso = 0.333;
             }
-            if(avaliacaoTipo == "P4"){
+            if(avaliacaoTipo.contains("P4")){
                 peso = 0.5;
             }
         }
 
-        if(disciplinaCodigo == "5005-220"){
-            if(avaliacaoTipo == "M"){
+        if(disciplinaCodigo.contains("5005-220")){
+            if(avaliacaoTipo.contains("M")){
                 peso = 0.8;
             }
-            if(avaliacaoTipo == "MR"){
+            if(avaliacaoTipo.contains("MR")){
                 peso = 0.2;
             }
-            if(avaliacaoTipo == "P3"){
+            if(avaliacaoTipo.contains("P3")){
                 peso = 0.5;
             }
         }

@@ -23,6 +23,6 @@ INSERT INTO Avaliacao VALUES
 ('P2'),
 ('T'),
 ('P3'),
-('PE'),
-('MC'),
+('P4'),
+('M'),
 ('MR')
