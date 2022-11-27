@@ -29,13 +29,14 @@ public class Notas {
 
     private Long nota;
 
-    private Long peso;
+    private Double peso;
 
     @JsonCreator
-    public Notas(Aluno aluno, Disciplina disciplina, Avaliacao avaliacao, Long nota){
+    public Notas(Aluno aluno, Disciplina disciplina, Avaliacao avaliacao, Long nota, Double peso){
         this.aluno = aluno;
         this.disciplina = disciplina;
         this.avaliacao = avaliacao;
         this.nota = nota;
+        this.peso = peso;
     }
 }
