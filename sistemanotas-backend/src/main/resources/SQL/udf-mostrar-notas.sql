@@ -1,6 +1,7 @@
-CREATE FUNCTION fn_selectNotas(@disciplina_id INT)
+-- Function que mostra as notas da turma
+CREATE FUNCTION fn_selectNotas(@cod_disciplina CHAR(8))
 RETURNS @table TABLE(
-aluno_ra INT,
+ra_aluno INT,
 nome_aluno VARCHAR(100),
 disciplina VARCHAR(50), -- Para mostrar no relatorio do jasper
 turno VARCHAR(10), -- Para mostrar no relatorio do jasper
@@ -14,11 +15,11 @@ situacao VARCHAR(20)
 )
 AS
 BEGIN
-	DECLARE @aluno_ra INT,
+	DECLARE @ra_aluno INT,
 		@nome_aluno VARCHAR(100),
 		@disciplina VARCHAR(50),
 		@turno VARCHAR(10),
-		@cod_disciplina CHAR(8),
+		@codigo_disciplina CHAR(8),
 		@codigo_avaliacao INT,
 		@nota1 DECIMAL(7,2),
 		@nota2 DECIMAL(7,2),
@@ -31,15 +32,13 @@ BEGIN
 		@situacao VARCHAR(20),
 		@num_faltas INT,
 		@limite_faltas INT
-	DECLARE c CURSOR FOR SELECT aluno_ra, disciplina_id, avaliacao_codigo, nota FROM Notas WHERE disciplina_id = @disciplina_id
+	DECLARE c CURSOR FOR SELECT ra_aluno, codigo_disciplina, codigo_avaliacao, nota, peso FROM Notas WHERE codigo_disciplina = @cod_disciplina
 	OPEN c
-	FETCH NEXT FROM c INTO @aluno_ra, @disciplina_id, @codigo_avaliacao, @nota
-	INSERT INTO @table (aluno_ra)
-		SELECT DISTINCT aluno_ra FROM Notas WHERE disciplina_id = @disciplina_id
+	FETCH NEXT FROM c INTO @ra_aluno, @codigo_disciplina, @codigo_avaliacao, @nota, @peso
+	INSERT INTO @table (ra_aluno)
+		SELECT DISTINCT ra_aluno FROM Notas WHERE codigo_disciplina = @cod_disciplina
 
-	SET @disciplina = (SELECT nome FROM Disciplina WHERE id = @disciplina_id)
-	SET @cod_disciplina = (SELECT codigo FROM Disciplina WHERE id = @disciplina_id)
-
+	SET @disciplina = (SELECT nome FROM Disciplina WHERE codigo = @cod_disciplina)
 	IF(@cod_disciplina = '4203-020' OR @cod_disciplina = '4213-013')
 	BEGIN
 		SET @turno = 'Noite'
@@ -62,13 +61,13 @@ BEGIN
 	SET @media = 0
 	WHILE(@@FETCH_STATUS = 0)
 	BEGIN
-		SET @num_faltas = (SELECT total_faltas FROM fn_selectFaltas(@cod_disciplina) WHERE aluno_ra = @aluno_ra)
+		SET @num_faltas = (SELECT total_faltas FROM fn_selectFaltas(@cod_disciplina) WHERE ra_aluno = @ra_aluno)
 		IF(@num_faltas > @limite_faltas)
 		BEGIN
 			SET @situacao = 'Reprovado por falta'
 			UPDATE @table
 			SET situacao = @situacao
-			WHERE aluno_ra = @aluno_ra
+			WHERE ra_aluno = @ra_aluno
 		END
 		ELSE
 		BEGIN
@@ -77,13 +76,13 @@ BEGIN
 
 		UPDATE @table
 		SET disciplina = @disciplina
-		WHERE aluno_ra = @aluno_ra
+		WHERE ra_aluno = @ra_aluno
 
 		UPDATE @table
 		SET turno = @turno
-		WHERE aluno_ra = @aluno_ra
+		WHERE ra_aluno = @ra_aluno
 
-		SET @nome_aluno = (SELECT nome FROM Aluno WHERE ra = @aluno_ra)
+		SET @nome_aluno = (SELECT nome FROM Aluno WHERE ra = @ra_aluno)
 		-- P1 ou MC
 		IF(@codigo_avaliacao = 1 OR @codigo_avaliacao = 6)
 		BEGIN
@@ -164,9 +163,9 @@ BEGIN
 
 		UPDATE @table
 		SET nome_aluno = @nome_aluno, nota1 = @nota1, nota2 = @nota2, nota3 = @nota3,pre_exame = @pre_exame, nota4 = @nota4, media = @media, situacao = @situacao
-		WHERE aluno_ra = @aluno_ra
+		WHERE ra_aluno = @ra_aluno
 
-		FETCH NEXT FROM c INTO @aluno_ra, @cod_disciplina, @codigo_avaliacao, @nota, @peso
+		FETCH NEXT FROM c INTO @ra_aluno, @codigo_disciplina, @codigo_avaliacao, @nota, @peso
 	END
 	CLOSE c
 	DEALLOCATE c

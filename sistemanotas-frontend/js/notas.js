@@ -87,13 +87,35 @@ $("button").click(function(){
 
     console.log(dataJson)
 
-    $.ajax({
-        url: urlNotas, 
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: dataJson,
-        success: function (result) {},
-         error: function (err) {}
-      }); // ajax call closing
+    var codigoDisciplina = disciplinas[dSelecionada-1].codigo
+    console.log(codigoDisciplina)
+
+    var tipoAvaliacao = avaliacoes[aSelecionada-1].tipo
+    console.log(tipoAvaliacao)
+
+    if(codigoDisciplina == "5005-220"){
+        if(tipoAvaliacao == "M" || tipoAvaliacao == "MR"){
+            $.ajax({
+                url: urlNotas, 
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: dataJson,
+                success: function (result) {},
+                 error: function (err) {}
+              }); // ajax call closing
+        } else {
+            alert("Tipo de avaliação incorreta para disciplina selecionada")
+        }
+    } else {
+        $.ajax({
+            url: urlNotas, 
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: dataJson,
+            success: function (result) {},
+             error: function (err) {}
+          }); // ajax call closing
+    }
   });

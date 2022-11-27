@@ -47,8 +47,33 @@
 
   <main>
 
-    <h2 class="ml-1"> Ver Notas</h2>
+    <h2 class="ml-1">Notas</h2>
+    <p3>Selecione a disciplina:</p3>
 
+    <select id="disciplina-selecionada" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option value="" disabled selected>Selecione</option>
+    </select>
+
+    <h4 id="titulo-disciplina"></h4>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">RA</th>
+          <th scope="col">Nome</th>
+          <th scope="col">P1</th>
+          <th scope="col">P2</th>
+          <th scope="col">P3</th>
+          <th scope="col">P4</th>
+          <th scope="col">T</th>
+          <th scope="col">M</th>
+          <th scope="col">MR</th>
+          <th scope="col">Média</th>
+          <th scope="col">Situação</th>
+        </tr>
+      </thead>
+      <tbody id="alunos"></tbody>
+    </table>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

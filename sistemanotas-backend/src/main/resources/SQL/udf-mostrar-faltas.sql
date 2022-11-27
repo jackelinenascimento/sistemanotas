@@ -1,3 +1,4 @@
+
 -- Function que mostra as Faltas da turma
 CREATE FUNCTION fn_selectFaltas(@codigo_disciplina CHAR(8))
 RETURNS @table TABLE(
@@ -67,7 +68,7 @@ BEGIN
 	SET @data_falta = (SELECT TOP 1 data_falta FROM Faltas WHERE codigo_disciplina = @codigo_disciplina AND ra_aluno = @ra_aluno)
 	SET @disciplina = (SELECT nome FROM Disciplina WHERE codigo = @codigo_disciplina)
 
-	IF(@codigo_disciplina = '4203-020' 
+	IF(@codigo_disciplina = '4203-020'
 		OR @codigo_disciplina = '4213-013')
 	BEGIN
 		SET @turno = 'Noite'
@@ -154,162 +155,162 @@ BEGIN
 		END -- Fim dos If's de presencas
 
 		UPDATE @table SET total_faltas = ISNULL(total_faltas, 0) + @total_faltas WHERE ra_aluno = @ra_aluno
-		
+
 		-- Lá vem mais
 		IF(@cont = 1)
 		BEGIN
-			UPDATE @table 
-			SET data1 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data1 = @presenca_fp 
+			UPDATE @table
+			SET data1 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data1 = @presenca_fp
 			WHERE ra_aluno = @ra_aluno
 		END
 		ELSE
 		BEGIN
 			IF(@cont = 2)
 			BEGIN
-				UPDATE @table 
-				SET data2 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data2 = @presenca_fp 
+				UPDATE @table
+				SET data2 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data2 = @presenca_fp
 				WHERE ra_aluno = @ra_aluno
 			END
 			ELSE
 			BEGIN
 				IF(@cont = 3)
 				BEGIN
-					UPDATE @table 
-					SET data3 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data3 = @presenca_fp 
+					UPDATE @table
+					SET data3 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data3 = @presenca_fp
 					WHERE ra_aluno = @ra_aluno
 				END
 				ELSE
 				BEGIN
 					IF(@cont = 4)
 					BEGIN
-						UPDATE @table 
-						SET data4 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data4 = @presenca_fp 
+						UPDATE @table
+						SET data4 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data4 = @presenca_fp
 						WHERE ra_aluno = @ra_aluno
 					END
 					ELSE
 					BEGIN
 						IF(@cont = 5)
 						BEGIN
-							UPDATE @table 
-							SET data5 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data5 = @presenca_fp 
+							UPDATE @table
+							SET data5 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data5 = @presenca_fp
 							WHERE ra_aluno = @ra_aluno
 						END
 						ELSE
 						BEGIN
 							IF(@cont = 6)
 							BEGIN
-								UPDATE @table 
-								SET data6 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data6 = @presenca_fp 
+								UPDATE @table
+								SET data6 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data6 = @presenca_fp
 								WHERE ra_aluno = @ra_aluno
 							END
 							ELSE
 							BEGIN
 								IF(@cont = 7)
 								BEGIN
-									UPDATE @table 
-									SET data7 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data7 = @presenca_fp 
+									UPDATE @table
+									SET data7 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data7 = @presenca_fp
 									WHERE ra_aluno = @ra_aluno
 								END
 								ELSE
 								BEGIN
 									IF(@cont = 8)
 									BEGIN
-										UPDATE @table 
-										SET data8 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data8 = @presenca_fp 
+										UPDATE @table
+										SET data8 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data8 = @presenca_fp
 										WHERE ra_aluno = @ra_aluno
 									END
 									ELSE
 									BEGIN
 										IF(@cont = 9)
 										BEGIN
-											UPDATE @table 
-											SET data9 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data9 = @presenca_fp 
+											UPDATE @table
+											SET data9 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data9 = @presenca_fp
 											WHERE ra_aluno = @ra_aluno
 										END
 										ELSE
 										BEGIN
 											IF(@cont = 10)
 											BEGIN
-												UPDATE @table 
-												SET data10 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data10 = @presenca_fp 
+												UPDATE @table
+												SET data10 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data10 = @presenca_fp
 												WHERE ra_aluno = @ra_aluno
 											END
 											ELSE
 											BEGIN
 												IF(@cont = 11)
 												BEGIN
-													UPDATE @table 
-													SET data11 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data11 = @presenca_fp 
+													UPDATE @table
+													SET data11 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data11 = @presenca_fp
 													WHERE ra_aluno = @ra_aluno
 												END
 												ELSE
 												BEGIN
 													IF(@cont = 12)
 													BEGIN
-														UPDATE @table 
-														SET data12 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data12 = @presenca_fp 
+														UPDATE @table
+														SET data12 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data12 = @presenca_fp
 														WHERE ra_aluno = @ra_aluno
 													END
 													ELSE
 													BEGIN
 														IF(@cont = 13)
 														BEGIN
-															UPDATE @table 
-															SET data13 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data13 = @presenca_fp 
+															UPDATE @table
+															SET data13 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data13 = @presenca_fp
 															WHERE ra_aluno = @ra_aluno
 														END
 														ELSE
 														BEGIN
 															IF(@cont = 14)
 															BEGIN
-																UPDATE @table 
-																SET data14 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data14 = @presenca_fp 
+																UPDATE @table
+																SET data14 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data14 = @presenca_fp
 																WHERE ra_aluno = @ra_aluno
 															END
 															ELSE
 															BEGIN
 																IF(@cont = 15)
 																BEGIN
-																	UPDATE @table 
-																	SET data15 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data15 = @presenca_fp 
+																	UPDATE @table
+																	SET data15 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data15 = @presenca_fp
 																	WHERE ra_aluno = @ra_aluno
 																END
 																ELSE
 																BEGIN
 																	IF(@cont = 16)
 																	BEGIN
-																		UPDATE @table 
-																		SET data16 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data16 = @presenca_fp 
+																		UPDATE @table
+																		SET data16 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data16 = @presenca_fp
 																		WHERE ra_aluno = @ra_aluno
 																	END
 																	ELSE
 																	BEGIN
 																		IF(@cont = 17)
 																		BEGIN
-																			UPDATE @table 
-																			SET data17 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data17 = @presenca_fp 
+																			UPDATE @table
+																			SET data17 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data17 = @presenca_fp
 																			WHERE ra_aluno = @ra_aluno
 																		END
 																		ELSE
 																		BEGIN
 																			IF(@cont = 18)
 																			BEGIN
-																				UPDATE @table 
-																				SET data18 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data18 = @presenca_fp 
+																				UPDATE @table
+																				SET data18 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data18 = @presenca_fp
 																				WHERE ra_aluno = @ra_aluno
 																			END
 																			ELSE
 																			BEGIN
 																				IF(@cont = 19)
 																				BEGIN
-																					UPDATE @table 
-																					SET data19 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data19 = @presenca_fp 
+																					UPDATE @table
+																					SET data19 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data19 = @presenca_fp
 																					WHERE ra_aluno = @ra_aluno
 																				END
 																				ELSE
 																				BEGIN
-																					UPDATE @table 
-																					SET data20 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data20 = @presenca_fp 
+																					UPDATE @table
+																					SET data20 = (SELECT CONVERT(CHAR(5),@data_falta,103)), presenca_data20 = @presenca_fp
 																					WHERE ra_aluno = @ra_aluno
 
 																					SET @cont = 0
