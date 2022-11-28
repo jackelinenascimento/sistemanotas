@@ -2,6 +2,8 @@ var urlDisciplinas = "http://127.0.0.1:8080/disciplinas";
 var urlAlunos = "http://127.0.0.1:8080/alunos";
 var urlAvaliacoes = "http://127.0.0.1:8080/avaliacoes";
 var urlNotas = "http://127.0.0.1:8080/notas";
+var urlFaltas = "http://127.0.0.1:8080/faltas";
+
 
 
 var disciplinaSelecionada = document.getElementById("disciplina-selecionada")
